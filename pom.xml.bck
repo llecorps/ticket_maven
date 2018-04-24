@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.lle.demo</groupId>
+  <artifactId>ticket</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>ticket</name>
+  <url>http://maven.apache.org</url>
+
+  <!-- =============================================================== -->
+    <!-- DistributionManagement -->
+    <!-- =============================================================== -->
+    <distributionManagement>
+        <site>
+            <id>site-projet</id>
+            <url>scp://localhost/tmp/</url>
+        </site>
+
+    </distributionManagement>
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <apache.struts.version>2.5.10.1</apache.struts.version>
+  </properties>
+
+  <modules>
+    <module>ticket-batch</module>
+    <module>ticket-webapp</module>
+    <module>ticket-business</module>
+    <module>ticket-consumer</module>
+    <module>ticket-model</module>
+  </modules>
+  <!-- =============================================================== -->
+  <!-- Gestion des dépendances -->
+  <!-- =============================================================== -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- ===== Modules ===== -->
+      <dependency>
+        <groupId>org.lle.demo</groupId>
+        <artifactId>ticket-batch</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lle.demo</groupId>
+        <artifactId>ticket-webapp</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lle.demo</groupId>
+        <artifactId>ticket-business</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lle.demo</groupId>
+        <artifactId>ticket-consumer</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lle.demo</groupId>
+        <artifactId>ticket-model</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>1.1.0.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.bval</groupId>
+        <artifactId>bval-jsr</artifactId>
+        <version>1.1.2</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>4.3.11.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- =============================================================== -->
+  <!-- Build -->
+  <!-- =============================================================== -->
+  <build>
+    <!-- ===== Gestion des plugins ===== -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+          <configuration>
+            <showDeprecation>true</showDeprecation>
+            <showWarnings>true</showWarnings>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.4.1</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
+
+        <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+           <version>3.6</version>
+            <configuration>
+              <locales>fr</locales>
+            </configuration>
+        </plugin>
+
+        <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+           <version>3.1</version>
+
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+
+</project>

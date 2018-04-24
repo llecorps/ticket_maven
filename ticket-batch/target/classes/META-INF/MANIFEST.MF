@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Built-By: esspressoh
+Class-Path: ticket-business-1.0-SNAPSHOT.jar ticket-consumer-1.0-SNAPS
+ HOT.jar ticket-model-1.0-SNAPSHOT.jar
+Build-Jdk: 1.8.0_162
+Created-By: Maven Integration for Eclipse
+Main-Class: org.lle.demo.batch.App
+
