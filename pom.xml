@@ -9,7 +9,7 @@
 
   <name>ticket</name>
   <url>http://maven.apache.org</url>
-  
+
   <!-- =============================================================== -->
     <!-- DistributionManagement -->
     <!-- =============================================================== -->
@@ -18,9 +18,9 @@
             <id>site-projet</id>
             <url>scp://localhost/tmp/</url>
         </site>
-        
+
     </distributionManagement>
-  
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -99,7 +99,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      
+
     </dependencies>
   </dependencyManagement>
 
@@ -135,29 +135,29 @@
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.0</version>
         </plugin>
-        
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
            <artifactId>maven-assembly-plugin</artifactId>
              <version>3.0.0</version>
         </plugin>
-        
+
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.7</version>
+        <version>3.6</version>
         <configuration>
           <locales>fr</locales>
         </configuration>
       </plugin>
-        
-        
-       
-        
+
+
+
+
       </plugins>
     </pluginManagement>
   </build>
-  
-   
+
+
 
 </project>
